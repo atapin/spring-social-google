@@ -39,6 +39,8 @@ import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 import org.springframework.social.oauth2.OAuth2Version;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.social.google.api.calendar.CalendarOperations;
+import org.springframework.social.google.api.calendar.impl.CalendarTemplate;
 
 /**
  * <p>
@@ -59,6 +61,7 @@ public class GoogleTemplate extends AbstractOAuth2ApiBinding implements Google {
 	private PlusOperations plusOperations;
 	private TaskOperations taskOperations;
 	private DriveOperations driveOperations;
+    private CalendarOperations calendarOperations;
 	
 	/**
 	 * Creates a new instance of GoogleTemplate.
@@ -83,6 +86,7 @@ public class GoogleTemplate extends AbstractOAuth2ApiBinding implements Google {
 		plusOperations = new PlusTemplate(getRestTemplate(), isAuthorized());
 		taskOperations = new TaskTemplate(getRestTemplate(), isAuthorized());
 		driveOperations = new DriveTemplate(getRestTemplate(), isAuthorized());
+        calendarOperations = new CalendarTemplate(getRestTemplate(), isAuthorized());
 	}
 	
 	@Override
@@ -126,6 +130,11 @@ public class GoogleTemplate extends AbstractOAuth2ApiBinding implements Google {
 	public DriveOperations driveOperations() {
 		return driveOperations;
 	}
+
+    @Override
+    public CalendarOperations calendarOperations() {
+        return calendarOperations;
+    }
 	
 	@Override
 	public String getAccessToken() {
