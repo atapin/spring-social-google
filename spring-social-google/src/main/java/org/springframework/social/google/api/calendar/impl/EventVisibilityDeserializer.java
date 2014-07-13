@@ -9,8 +9,8 @@ import org.springframework.social.google.api.impl.ApiEnumDeserializer;
  */
 public class EventVisibilityDeserializer extends ApiEnumDeserializer<EventVisibility> {
 
-    public EventVisibilityDeserializer(Class<EventVisibility> type) {
-        super(type);
+    public EventVisibilityDeserializer() {
+        super(EventVisibility.class);
     }
     
 }

@@ -9,8 +9,8 @@ import org.springframework.social.google.api.impl.ApiEnumDeserializer;
  */
 public class EventStatusDeserializer extends ApiEnumDeserializer<EventStatus> {
 
-    public EventStatusDeserializer(Class<EventStatus> type) {
-        super(type);
+    public EventStatusDeserializer() {
+        super(EventStatus.class);
     }
 
 }

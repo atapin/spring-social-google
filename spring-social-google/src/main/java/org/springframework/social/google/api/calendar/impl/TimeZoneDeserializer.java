@@ -13,6 +13,8 @@ import java.util.TimeZone;
  */
 public class TimeZoneDeserializer extends JsonDeserializer<TimeZone> {
 
+    public TimeZoneDeserializer() { }
+    
     @Override
     public TimeZone deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
         final String stringValue = jp.getValueAsString();

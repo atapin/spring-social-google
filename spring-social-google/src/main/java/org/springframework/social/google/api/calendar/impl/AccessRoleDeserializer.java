@@ -9,8 +9,8 @@ import org.springframework.social.google.api.impl.ApiEnumDeserializer;
  */
 public class AccessRoleDeserializer extends ApiEnumDeserializer<AccessRole> {
 
-    public AccessRoleDeserializer(Class<AccessRole> type) {
-        super(type);
+    public AccessRoleDeserializer() {
+        super(AccessRole.class);
     }
 
 }

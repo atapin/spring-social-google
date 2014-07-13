@@ -12,12 +12,36 @@ import org.springframework.social.google.api.calendar.impl.AccessRoleDeserialize
 import org.springframework.social.google.api.impl.ApiEnumSerializer;
 
 /**
- *
+ * User's access role to a calendar
  * @author Andrey Atapin
  */
 @JsonSerialize(using=ApiEnumSerializer.class)
 @JsonDeserialize(using=AccessRoleDeserializer.class)
 public enum AccessRole {
+    /**
+     * No access.
+     */
+    NONE,
+    /**
+     * The user has ownership of the calendar. 
+     * This role has all of the permissions of the writer role 
+     * with the additional ability to see and manipulate ACLs
+     */
     OWNER,
-    READER
+    /**
+     * The user has read access to the calendar.
+     * Private events will appear to users with reader access,
+     * but event details will be hidden.
+     */
+    READER,
+    /**
+     * The user has read access to free/busy information.
+     */
+    FREE_BUSY_READER,
+    /**
+     * The user has read and write access to the calendar. 
+     * Private events will appear to users with writer access,
+     * and event details will be visible.
+     */
+    WRITER
 }

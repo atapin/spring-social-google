@@ -44,7 +44,6 @@ public class CalendarTemplate extends AbstractGoogleApiOperations implements Cal
 
     @Override
     public Calendar findCalendar(String id) {
-        if(StringUtils.isEmpty(id)) throw new IllegalArgumentException("ID must not be blank");
         return getEntity(CALENDAR_FIND_URL + id, Calendar.class);
     }
     

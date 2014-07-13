@@ -45,5 +45,37 @@ public class Event extends ApiEntity {
     public EventVisibility getVisibility() {
         return visibility;
     }
+
+    public void setStatus(EventStatus status) {
+        this.status = status;
+    }
+
+    public void setStart(EventDateTime start) {
+        this.start = start;
+    }
+
+    public void setEnd(EventDateTime end) {
+        this.end = end;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public void setVisibility(EventVisibility visibility) {
+        this.visibility = visibility;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Event[");
+        
+        if(start != null) sb.append("start=").append(start.toString()).append(";");
+        if(start != null) sb.append("end=").append(start.toString()).append(";");
+        
+        sb.append("]");
+        return sb.toString();
+    }
+    
     
 }
